@@ -50,10 +50,17 @@
   flex-wrap: wrap;
 }
 
-/* Screenshot placeholder */
+/* Screenshot */
 .shot {
   position: relative;
   margin: var(--spacing-40) 0 var(--spacing-72);
+}
+
+.shotImg {
+  width: 100%;
+  display: block;
+  border-radius: var(--radius-cards);
+  border: 1px solid rgba(36, 36, 36, 0.12);
 }
 
 .shotInner {

@@ -3,14 +3,6 @@ import { Orb } from '@/components/Orb';
 import { Reveal } from '@/components/Reveal';
 import styles from './page.module.css';
 
-const stats = [
-  { value: '13年', label: '产品经验' },
-  { value: '30w+', label: '达人资源池' },
-  { value: '8w+', label: '日均高并发数据' },
-  { value: '+10%', label: 'GMV / ROI 双增长' },
-  { value: '100%', label: '版本按期交付率' },
-];
-
 const trinity = [
   {
     idx: '01',
@@ -56,8 +48,6 @@ const projects = [
   },
 ];
 
-const dohozzModules = ['达人库', '批量建联', '寄样管理', '履约追踪', '合作单', '绩效归属'];
-
 export default function HomePage() {
   return (
     <div className={styles.home}>
@@ -68,10 +58,10 @@ export default function HomePage() {
         <div className={`content ${styles.heroInner}`}>
           <span className="eyebrow fade-up">AI产品经理 / 资深产品经理</span>
           <h1 className={`${styles.heroTitle} fade-up delay-1`}>
-            资深产品力 × AI 工程力，把构想变成可用的产品
+            用业务思维做产品，用 AI 能力造产品
           </h1>
           <p className={`${styles.heroSub} fade-up delay-2`}>
-            电商SaaS资深 · AI产品化 · Vibe Coding
+            资深电商SaaS · AI产品化 · Vibe Coding
           </p>
           <div className={`${styles.heroCta} fade-up delay-3`}>
             <Link href="/work" className="btn btn-primary">
@@ -84,29 +74,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className={`section-tight ${styles.statsBand}`}>
-        <div className="content">
-          <div className={styles.statsGrid}>
-            {stats.map((s, i) => (
-              <Reveal key={s.label} className={styles.stat} delay={i * 0.05}>
-                <div className={styles.statValue}>{s.value}</div>
-                <div className={styles.statLabel}>{s.label}</div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Trinity */}
       <section className="section">
         <div className="content">
           <Reveal className="section-head">
             <span className="eyebrow">差异化 · 三位一体</span>
             <h2>
-              我不只是写 PRD 的人，
-              <br />
-              我能把 PRD 变成可运行的产品。
+              资深产品力 × AI 工程力，把构想变成可用的产品
             </h2>
           </Reveal>
           <div className={styles.trinityGrid}>
@@ -129,8 +103,7 @@ export default function HomePage() {
               <span className="eyebrow">旗舰案例 · 可在线体验</span>
               <h2>DOHOZZ 达人智能运营管理平台</h2>
               <p>
-                一站式跨境达人营销智能决策 SaaS，重新定义达人全生命周期管理，并用 Vibe
-                Coding 搭出可演示 Web Demo。
+                DOHOZZ 是一款面向品牌商家的达人营销智能决策与管理平台，支持 TikTok、Shopee、Instagram、Lazada 等多平台。一站式助力高效筛选海量达人、精细化管理合作流程、实时追踪营销效果，驱动品牌内容与电商业务双增长。
               </p>
               <div className={styles.spotlightTags}>
                 {['SaaS', '跨境电商', 'AI Agent', 'Vibe Coding', '0→1'].map((t) => (
@@ -154,16 +127,11 @@ export default function HomePage() {
               </div>
             </div>
             <div className={styles.spotlightVisual}>
-              <Orb variant="sky" size={200} style={{ top: '-40px', right: '-30px', opacity: 0.5 }} />
-              <div className={styles.visualCard}>
-                <div className={styles.visualLabel}>DOHOZZ</div>
-                <div className={styles.visualModules}>
-                  {dohozzModules.map((m) => (
-                    <span key={m}>{m}</span>
-                  ))}
-                </div>
-                <div className={styles.visualFlow}>找达人 → 建联 → 寄样 → 转化 → 复盘</div>
-              </div>
+              <img
+                src="/数据运营-数据概览.png"
+                alt="DOHOZZ 数据概览"
+                className={styles.visualImg}
+              />
             </div>
           </Reveal>
         </div>
@@ -205,9 +173,10 @@ export default function HomePage() {
           <Reveal className={`card ${styles.aboutCta}`}>
             <span className="eyebrow">关于我</span>
             <p className={styles.aboutText}>
-              13 年互联网产品经验，从顺丰 IT 支持到网易系 IM，再到电商 SaaS
-              资深产品经理，如今专注 AI 产品化方向。精通电商 SaaS 产品的 0→1
-              搭建与全周期管理，并能用 Cursor / Claude Code 把需求亲手做成可运行的 Demo。
+              一名复合型产品经理，7 年经验横跨电商 SaaS、跨境达人营销、ERP/CRM、企业 IM 等领域，具备 B/C 端产品从 0 到 1 独立搭建与全生命周期管理经验。
+            </p>
+            <p className={styles.aboutText}>
+              我相信好产品始于对业务的深度理解——先吃透业务，再把目标拆解为清晰的产品方案，让研发"一看就懂"。进入 AI 时代，我熟练运用 Vibe Coding 将构想快速变为可交互 Demo，把需求验证前置，并持续探索 AI Agent、Prompt 工程在真实业务中的落地。
             </p>
             <Link href="/about" className="link">
               了解更多 →

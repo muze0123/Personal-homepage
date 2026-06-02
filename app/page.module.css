@@ -12,10 +12,17 @@
 }
 
 .heroTitle {
-  font-size: var(--text-display);
-  line-height: 1.1;
+  font-size: 60px;
+  line-height: 1.35;
   margin: var(--spacing-16) auto var(--spacing-24);
-  max-width: 16ch;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    white-space: normal;
+    font-size: var(--text-heading-lg);
+  }
 }
 
 .heroSub {
@@ -129,49 +136,11 @@
   position: relative;
 }
 
-.visualCard {
-  position: relative;
-  z-index: 1;
-  background: var(--color-atmosphere-wash);
+.visualImg {
+  width: 100%;
+  display: block;
   border-radius: var(--radius-cards);
-  padding: var(--spacing-40);
-  min-height: 280px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: var(--spacing-24);
-}
-
-.visualLabel {
-  font-family: var(--font-mono);
-  font-weight: 500;
-  font-size: var(--text-heading);
-  color: var(--color-ink);
-  letter-spacing: 0.05em;
-}
-
-.visualModules {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.visualModules span {
-  font-family: var(--font-mono);
-  font-size: var(--text-caption);
-  background: rgba(246, 243, 241, 0.7);
-  border: 1px solid rgba(36, 36, 36, 0.18);
-  padding: 5px 12px;
-  border-radius: var(--radius-tags);
-  color: var(--color-off-black);
-}
-
-.visualFlow {
-  font-family: var(--font-mono);
-  font-size: var(--text-body-sm);
-  color: var(--color-off-black);
-  padding-top: var(--spacing-16);
-  border-top: 1px dashed rgba(36, 36, 36, 0.25);
+  border: 1px solid rgba(36, 36, 36, 0.12);
 }
 
 /* Project Grid */

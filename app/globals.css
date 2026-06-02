@@ -194,6 +194,11 @@ ul {
   border: 1px solid var(--color-off-black);
 }
 
+.btn-ghost:hover {
+  background: rgba(36, 36, 36, 0.04);
+  opacity: 1;
+}
+
 /* ===== Tags ===== */
 
 .tag {
@@ -206,11 +211,21 @@ ul {
   border-radius: var(--radius-tags);
   color: var(--color-off-black);
   white-space: nowrap;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  cursor: default;
+}
+
+.tag:hover {
+  background: rgba(36, 36, 36, 0.04);
 }
 
 .tag-ink {
   border-color: var(--color-ink);
   color: var(--color-ink);
+}
+
+.tag-ink:hover {
+  background: rgba(0, 0, 0, 0.04);
 }
 
 /* ===== Cards ===== */
@@ -219,6 +234,12 @@ ul {
   background: var(--color-atmosphere-wash);
   border-radius: var(--radius-cards);
   padding: var(--card-padding);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-float);
 }
 
 .card-plain {
@@ -226,6 +247,13 @@ ul {
   border: 1px solid rgba(36, 36, 36, 0.12);
   border-radius: var(--radius-cards);
   padding: var(--spacing-32);
+  transition: border-color 0.2s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.card-plain:hover {
+  border-color: rgba(36, 36, 36, 0.25);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
 }
 
 /* ===== Links ===== */

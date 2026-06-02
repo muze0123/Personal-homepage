@@ -12,6 +12,7 @@ export interface WorkProject {
   industry: string;
   tags: string[];
   flagship?: boolean;
+  screenshot?: string;
   demoUrl?: string;
   githubUrl?: string;
   background: string;
@@ -39,6 +40,7 @@ export const workProjects: Record<string, WorkProject> = {
     industry: '跨境电商 · 达人营销 SaaS',
     tags: ['SaaS', '跨境电商', 'AI Agent', 'Vibe Coding', '0→1'],
     flagship: true,
+    screenshot: '/shot-dohozz-overview.png',
     demoUrl: 'https://dohozz.vercel.app',
     githubUrl: 'https://github.com/muze0123/DOHOZZ',
     background:

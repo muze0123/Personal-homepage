@@ -128,17 +128,26 @@ export default function AboutPage() {
       <section className="section-tight" style={{ marginTop: 'var(--spacing-72)' }}>
         <div className={styles.eduHobby}>
           <Reveal className={`card ${styles.eduCard}`}>
-            <span className="eyebrow">Education</span>
-            <h3>浙江大学</h3>
-            <div className={styles.eduDegree}>本科 · 信息管理与信息系统</div>
-            <div className={styles.eduPeriod}>2017 – 2020</div>
-            <p className={styles.eduHonor}>2018 年浙江大学优秀学生荣誉</p>
-            <div className={styles.eduCourses}>
-              {courses.map((c) => (
-                <span key={c} className="tag">
-                  {c}
-                </span>
-              ))}
+            <div className={styles.eduContent}>
+              <span className="eyebrow">Education</span>
+              <h3>浙江大学</h3>
+              <div className={styles.eduDegree}>本科 · 信息管理与信息系统</div>
+              <div className={styles.eduPeriod}>2017 – 2020</div>
+              <p className={styles.eduHonor}>2018 年浙江大学优秀学生荣誉</p>
+              <div className={styles.eduCourses}>
+                {courses.map((c) => (
+                  <span key={c} className="tag">
+                    {c}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className={styles.eduCertWrap}>
+              <img
+                src="/教育部学籍在线验证报告.png"
+                alt="教育部学籍在线验证报告"
+                className={styles.eduCert}
+              />
             </div>
           </Reveal>
 

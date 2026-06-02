@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import styles from './Nav.module.css';
 
@@ -13,18 +14,15 @@ const navLinks = [
 
 export function Nav() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className={styles.root}>
-      <div className={styles.noticeBar}>
-        <span className={styles.noticeDot} />
-        <span>正在看新机会 · 杭州 · 产品 / AI产品经理</span>
-      </div>
       <nav className={styles.nav}>
         <div className={styles.navInner}>
           <Link href="/" className={styles.brand}>
             <span className={styles.brandMark}>ZB</span>
-            <span className={styles.brandName}>张斌</span>
+            <span className={styles.brandName}>主页</span>
           </Link>
           <button
             className={styles.navToggle}
@@ -37,7 +35,12 @@ export function Nav() {
           </button>
           <div className={`${styles.navLinks} ${open ? styles.open : ''}`}>
             {navLinks.map((l) => (
-              <Link key={l.href} href={l.href} onClick={() => setOpen(false)}>
+              <Link
+                key={l.href}
+                href={l.href}
+                className={pathname === l.href || pathname.startsWith(l.href + '/') ? styles.active : ''}
+                onClick={() => setOpen(false)}
+              >
                 {l.label}
               </Link>
             ))}

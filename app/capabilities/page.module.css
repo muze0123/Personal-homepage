@@ -30,6 +30,12 @@
   padding: var(--spacing-24);
   flex: 1;
   height: 100%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.flowCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-float);
 }
 
 .flowIdx {
@@ -43,6 +49,7 @@
   font-size: var(--text-subheading);
   margin: 8px 0;
   color: var(--color-ink);
+  white-space: nowrap;
 }
 
 .flowCard p {
@@ -89,6 +96,7 @@
 .aiCard h3 {
   font-size: var(--text-subheading);
   margin-bottom: 12px;
+  white-space: nowrap;
 }
 
 .aiCard p {
@@ -127,5 +135,9 @@
   }
   .flowArrow {
     display: none;
+  }
+  .flowStep,
+  .aiCard h3 {
+    white-space: normal;
   }
 }

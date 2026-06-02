@@ -74,13 +74,23 @@ export function WorkDetail({ slug }: WorkDetailProps) {
         )}
       </Reveal>
 
-      {/* Screenshot placeholder */}
+      {/* Screenshot */}
       <Reveal className={styles.shot} delay={0.05}>
-        <Orb variant="sky" size={240} style={{ top: '-50px', right: '-40px', opacity: 0.4 }} />
-        <div className={styles.shotInner}>
-          <div className={styles.shotLabel}>{project.name}</div>
-          <div className={styles.shotHint}>产品截图待补 · 占位中</div>
-        </div>
+        {project.screenshot ? (
+          <img
+            src={project.screenshot}
+            alt={`${project.name} 截图`}
+            className={styles.shotImg}
+          />
+        ) : (
+          <>
+            <Orb variant="sky" size={240} style={{ top: '-50px', right: '-40px', opacity: 0.4 }} />
+            <div className={styles.shotInner}>
+              <div className={styles.shotLabel}>{project.name}</div>
+              <div className={styles.shotHint}>产品截图待补 · 占位中</div>
+            </div>
+          </>
+        )}
       </Reveal>
 
       {/* Background */}

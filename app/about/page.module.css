@@ -1,20 +1,26 @@
 .aboutHero {
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 220px 1fr;
   gap: var(--spacing-72);
   align-items: start;
 }
 
 .aboutAvatar {
   position: relative;
-  width: 260px;
-  height: 370px;
+  width: 200px;
+  height: 285px;
 }
 
 .avatarImg {
   position: relative;
   z-index: 1;
   border-radius: var(--radius-cards);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.avatarImg:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-float);
 }
 
 .aboutIntro h1 {
@@ -26,11 +32,20 @@
   font-family: var(--font-mono);
   color: var(--color-faint-text);
   margin-bottom: var(--spacing-24);
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .aboutTitle {
+    white-space: normal;
+  }
 }
 
 .aboutIntro p {
-  color: var(--color-pale-stone);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
   line-height: 1.7;
+  color: var(--color-pale-stone);
   margin-bottom: var(--spacing-20);
 }
 
@@ -97,10 +112,42 @@
   gap: var(--element-gap);
 }
 
+.eduCard {
+  display: flex;
+  gap: var(--spacing-32);
+  align-items: flex-start;
+}
+
+.eduContent {
+  flex: 1;
+  min-width: 0;
+}
+
 .eduCard h3,
 .hobbyCard h3 {
   font-size: var(--text-heading-sm);
   margin: 8px 0;
+}
+
+.eduCertWrap {
+  flex-shrink: 0;
+  width: 180px;
+}
+
+.eduCert {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid rgba(36, 36, 36, 0.12);
+}
+
+@media (max-width: 768px) {
+  .eduCard {
+    flex-direction: column;
+  }
+  .eduCertWrap {
+    width: 100%;
+  }
 }
 
 .eduDegree {
@@ -140,8 +187,16 @@
   font-size: var(--text-body);
   padding: 8px 18px;
   background: var(--color-paper-canvas);
+  border: 1px solid rgba(36, 36, 36, 0.12);
   border-radius: var(--radius-tags);
   color: var(--color-off-black);
+  transition: background 0.2s ease, border-color 0.2s ease;
+  cursor: default;
+}
+
+.hobbyPill:hover {
+  background: var(--color-atmosphere-wash);
+  border-color: rgba(36, 36, 36, 0.25);
 }
 
 /* Bottom CTA */
