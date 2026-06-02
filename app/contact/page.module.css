@@ -1,0 +1,118 @@
+.contactHero {
+  position: relative;
+  text-align: center;
+  margin-bottom: var(--spacing-40);
+}
+
+.contactHero h1 {
+  font-size: var(--text-heading-lg);
+  margin: var(--spacing-16) 0;
+  position: relative;
+  z-index: 1;
+}
+
+.contactHero p {
+  color: var(--color-pale-stone);
+  max-width: 56ch;
+  margin: 0 auto;
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
+}
+
+/* Intent */
+.intentCard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-24);
+  margin-bottom: var(--element-gap);
+}
+
+.intentItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.intentLabel {
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  letter-spacing: 0.05em;
+  color: var(--color-faint-text);
+}
+
+.intentValue {
+  font-family: var(--font-mono);
+  font-size: var(--text-subheading);
+  color: var(--color-ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.statusDot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #5fb98a;
+}
+
+/* Contact Grid */
+.contactGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--element-gap);
+}
+
+.contactBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contactEmail {
+  font-family: var(--font-mono);
+  font-size: var(--text-subheading);
+  color: var(--color-ink);
+  border-bottom: 1px solid;
+  padding-bottom: 2px;
+  align-self: flex-start;
+  word-break: break-all;
+}
+
+.contactEmail:hover {
+  opacity: 0.7;
+}
+
+.contactNote {
+  font-family: var(--font-mono);
+  font-size: var(--text-body-sm);
+  color: var(--color-faint-text);
+  flex: 1;
+}
+
+.contactExternal {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contactExternal a {
+  font-family: var(--font-mono);
+  font-size: var(--text-body);
+  color: var(--color-off-black);
+}
+
+.contactExternal a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 900px) {
+  .intentCard {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+}

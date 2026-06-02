@@ -1,0 +1,97 @@
+.timeline {
+  position: relative;
+}
+
+.tlItem {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: var(--spacing-24);
+  margin-bottom: var(--spacing-24);
+}
+
+.tlMarker {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 8px;
+}
+
+.tlDot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-ink);
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.tlLine {
+  position: absolute;
+  top: 22px;
+  bottom: -32px;
+  width: 1px;
+  background: rgba(36, 36, 36, 0.2);
+}
+
+.tlTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.tlTop h3 {
+  font-size: var(--text-subheading);
+}
+
+.tlPeriod {
+  font-family: var(--font-mono);
+  font-size: var(--text-body-sm);
+  color: var(--color-faint-text);
+  white-space: nowrap;
+}
+
+.tlRole {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--text-body-sm);
+  color: var(--color-off-black);
+  margin: 8px 0 var(--spacing-16);
+  padding: 3px 12px;
+  border: 1px solid rgba(36, 36, 36, 0.2);
+  border-radius: var(--radius-tags);
+}
+
+.tlPoints {
+  list-style: none;
+}
+
+.tlPoints li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  font-family: var(--font-mono);
+  font-size: var(--text-body-sm);
+  color: var(--color-pale-stone);
+  line-height: 1.6;
+}
+
+.tlPoints li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--color-off-black);
+  opacity: 0.5;
+}
+
+.expCta {
+  text-align: center;
+  margin-top: var(--spacing-80);
+}
+
+.expCta h2 {
+  font-size: var(--text-heading-lg);
+  margin-bottom: var(--spacing-24);
+}

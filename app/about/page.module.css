@@ -1,0 +1,172 @@
+.aboutHero {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: var(--spacing-72);
+  align-items: start;
+}
+
+.aboutAvatar {
+  position: relative;
+  width: 260px;
+  height: 370px;
+}
+
+.avatarImg {
+  position: relative;
+  z-index: 1;
+  border-radius: var(--radius-cards);
+}
+
+.aboutIntro h1 {
+  font-size: var(--text-heading-lg);
+  margin: 8px 0;
+}
+
+.aboutTitle {
+  font-family: var(--font-mono);
+  color: var(--color-faint-text);
+  margin-bottom: var(--spacing-24);
+}
+
+.aboutIntro p {
+  color: var(--color-pale-stone);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-20);
+}
+
+.aboutActions {
+  display: flex;
+  gap: var(--element-gap);
+  flex-wrap: wrap;
+  margin-top: var(--spacing-24);
+}
+
+/* Advantages */
+.advGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--element-gap);
+}
+
+.advItem {
+  display: flex;
+  gap: var(--spacing-16);
+  align-items: flex-start;
+}
+
+.advNum {
+  font-family: var(--font-mono);
+  color: var(--color-off-black);
+  opacity: 0.4;
+  font-size: var(--text-body-sm);
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.advItem p {
+  font-family: var(--font-mono);
+  font-size: var(--text-body-sm);
+  line-height: 1.65;
+  color: var(--color-pale-stone);
+}
+
+/* Skills */
+.skillGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-32);
+}
+
+.skillGroup {
+  font-size: var(--text-subheading);
+  margin-bottom: var(--spacing-16);
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(36, 36, 36, 0.12);
+}
+
+.skillTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Education & Hobbies */
+.eduHobby {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--element-gap);
+}
+
+.eduCard h3,
+.hobbyCard h3 {
+  font-size: var(--text-heading-sm);
+  margin: 8px 0;
+}
+
+.eduDegree {
+  font-family: var(--font-mono);
+  color: var(--color-off-black);
+}
+
+.eduPeriod {
+  font-family: var(--font-mono);
+  font-size: var(--text-body-sm);
+  color: var(--color-faint-text);
+  margin-bottom: var(--spacing-16);
+}
+
+.eduHonor {
+  color: var(--color-pale-stone);
+  margin-bottom: var(--spacing-24);
+  font-family: var(--font-mono);
+  font-size: var(--text-body-sm);
+}
+
+.eduCourses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.hobbyList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: var(--spacing-16);
+}
+
+.hobbyPill {
+  font-family: var(--font-mono);
+  font-size: var(--text-body);
+  padding: 8px 18px;
+  background: var(--color-paper-canvas);
+  border-radius: var(--radius-tags);
+  color: var(--color-off-black);
+}
+
+/* Bottom CTA */
+.aboutBottomCta {
+  text-align: center;
+  margin-top: var(--spacing-80);
+}
+
+.aboutBottomCta h2 {
+  font-size: var(--text-heading-lg);
+  margin-bottom: var(--spacing-24);
+}
+
+@media (max-width: 900px) {
+  .aboutHero {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-40);
+  }
+  .advGrid {
+    grid-template-columns: 1fr;
+  }
+  .skillGrid {
+    grid-template-columns: 1fr;
+  }
+  .eduHobby {
+    grid-template-columns: 1fr;
+  }
+}

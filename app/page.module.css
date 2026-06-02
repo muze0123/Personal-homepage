@@ -1,0 +1,295 @@
+/* Hero */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--spacing-200) var(--spacing-80);
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.heroTitle {
+  font-size: var(--text-display);
+  line-height: 1.1;
+  margin: var(--spacing-16) auto var(--spacing-24);
+  max-width: 16ch;
+}
+
+.heroSub {
+  font-family: var(--font-mono);
+  font-size: var(--text-subheading);
+  color: var(--color-pale-stone);
+  letter-spacing: 0.02em;
+}
+
+.heroCta {
+  display: flex;
+  gap: var(--element-gap);
+  justify-content: center;
+  margin-top: var(--spacing-40);
+  flex-wrap: wrap;
+}
+
+/* Stats */
+.statsBand {
+  border-top: 1px solid rgba(36, 36, 36, 0.1);
+  border-bottom: 1px solid rgba(36, 36, 36, 0.1);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--spacing-24);
+}
+
+.stat {
+  text-align: center;
+}
+
+.statValue {
+  font-family: var(--font-serif);
+  font-size: var(--text-heading-lg);
+  color: var(--color-ink);
+}
+
+.statLabel {
+  font-family: var(--font-mono);
+  font-size: var(--text-body-sm);
+  color: var(--color-faint-text);
+  margin-top: 6px;
+}
+
+/* Trinity */
+.trinityGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--element-gap);
+}
+
+.trinityCard {
+  position: relative;
+}
+
+.trinityIndex {
+  font-family: var(--font-mono);
+  font-size: var(--text-body-sm);
+  color: var(--color-off-black);
+  opacity: 0.45;
+  margin-bottom: var(--spacing-16);
+}
+
+.trinityCard h3 {
+  font-size: var(--text-heading-sm);
+  margin-bottom: var(--spacing-16);
+}
+
+.trinityCard p {
+  color: var(--color-pale-stone);
+  font-family: var(--font-mono);
+  font-size: var(--text-body-sm);
+  line-height: 1.6;
+}
+
+/* Spotlight */
+.spotlight {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: var(--spacing-72);
+  align-items: center;
+}
+
+.spotlightText h2 {
+  font-size: var(--text-heading-lg);
+  margin: var(--spacing-16) 0 var(--spacing-24);
+}
+
+.spotlightText p {
+  color: var(--color-pale-stone);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-24);
+}
+
+.spotlightTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: var(--spacing-32);
+}
+
+.spotlightCta {
+  display: flex;
+  gap: var(--element-gap);
+  flex-wrap: wrap;
+}
+
+.spotlightVisual {
+  position: relative;
+}
+
+.visualCard {
+  position: relative;
+  z-index: 1;
+  background: var(--color-atmosphere-wash);
+  border-radius: var(--radius-cards);
+  padding: var(--spacing-40);
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--spacing-24);
+}
+
+.visualLabel {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: var(--text-heading);
+  color: var(--color-ink);
+  letter-spacing: 0.05em;
+}
+
+.visualModules {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.visualModules span {
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  background: rgba(246, 243, 241, 0.7);
+  border: 1px solid rgba(36, 36, 36, 0.18);
+  padding: 5px 12px;
+  border-radius: var(--radius-tags);
+  color: var(--color-off-black);
+}
+
+.visualFlow {
+  font-family: var(--font-mono);
+  font-size: var(--text-body-sm);
+  color: var(--color-off-black);
+  padding-top: var(--spacing-16);
+  border-top: 1px dashed rgba(36, 36, 36, 0.25);
+}
+
+/* Project Grid */
+.sectionHeadRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.projGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--element-gap);
+}
+
+.projCard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.projCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-float);
+}
+
+.projIndustry {
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  letter-spacing: 0.05em;
+  color: var(--color-faint-text);
+  margin-bottom: 12px;
+}
+
+.projName {
+  font-size: var(--text-subheading);
+  line-height: 1.3;
+  margin-bottom: 12px;
+  color: var(--color-ink);
+}
+
+.projSummary {
+  font-family: var(--font-mono);
+  font-size: var(--text-body-sm);
+  color: var(--color-pale-stone);
+  line-height: 1.55;
+  flex: 1;
+  margin-bottom: var(--spacing-24);
+}
+
+.projTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* About CTA */
+.aboutCta {
+  text-align: center;
+}
+
+.aboutText {
+  font-family: var(--font-mono);
+  font-size: var(--text-subheading);
+  color: var(--color-off-black);
+  line-height: 1.6;
+  max-width: 62ch;
+  margin: var(--spacing-16) auto var(--spacing-24);
+}
+
+/* Final CTA */
+.finalCta {
+  text-align: center;
+  margin-top: var(--spacing-80);
+}
+
+.finalCta h2 {
+  font-size: var(--text-heading-lg);
+  margin-bottom: var(--spacing-16);
+}
+
+.finalCta p {
+  font-family: var(--font-mono);
+  color: var(--color-faint-text);
+  margin-bottom: var(--spacing-32);
+}
+
+.finalCtaBtns {
+  display: flex;
+  gap: var(--element-gap);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .statsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: var(--spacing-32);
+  }
+  .trinityGrid {
+    grid-template-columns: 1fr;
+  }
+  .spotlight {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-40);
+  }
+  .projGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-block: var(--spacing-80) var(--spacing-72);
+  }
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

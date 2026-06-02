@@ -1,0 +1,131 @@
+.capBlock {
+  margin-bottom: var(--spacing-80);
+}
+
+.capH2 {
+  font-size: var(--text-heading);
+  margin: 8px 0 var(--spacing-40);
+}
+
+/* Flow */
+.flow {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: var(--spacing-40);
+}
+
+.flowNode {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.flowCard {
+  background: var(--color-atmosphere-wash);
+  border-radius: var(--radius-cards);
+  padding: var(--spacing-24);
+  flex: 1;
+  height: 100%;
+}
+
+.flowIdx {
+  font-family: var(--font-mono);
+  font-size: var(--text-body-sm);
+  opacity: 0.4;
+}
+
+.flowStep {
+  font-family: var(--font-serif);
+  font-size: var(--text-subheading);
+  margin: 8px 0;
+  color: var(--color-ink);
+}
+
+.flowCard p {
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  line-height: 1.5;
+  color: var(--color-pale-stone);
+}
+
+.flowArrow {
+  font-family: var(--font-mono);
+  color: var(--color-off-black);
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+/* Proof card */
+.capProof {
+  position: relative;
+  overflow: hidden;
+}
+
+.capProofInner {
+  position: relative;
+  z-index: 1;
+}
+
+.capProofInner p {
+  color: var(--color-off-black);
+  line-height: 1.7;
+  max-width: 70ch;
+  margin: var(--spacing-16) 0 var(--spacing-24);
+  font-family: var(--font-mono);
+  font-size: var(--text-body-sm);
+}
+
+/* AI Methods Grid */
+.aiGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--element-gap);
+}
+
+.aiCard h3 {
+  font-size: var(--text-subheading);
+  margin-bottom: 12px;
+}
+
+.aiCard p {
+  font-family: var(--font-mono);
+  font-size: var(--text-body-sm);
+  color: var(--color-pale-stone);
+  line-height: 1.6;
+}
+
+/* Toolbox */
+.toolbox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.toolboxTag {
+  font-size: var(--text-body) !important;
+  padding: 8px 18px !important;
+}
+
+/* Bottom CTA */
+.capCta {
+  text-align: center;
+  margin-top: var(--spacing-40);
+}
+
+.capCta h2 {
+  font-size: var(--text-heading-lg);
+  margin-bottom: var(--spacing-24);
+}
+
+@media (max-width: 900px) {
+  .aiGrid {
+    grid-template-columns: 1fr;
+  }
+  .flowArrow {
+    display: none;
+  }
+}
