@@ -1,3 +1,11 @@
+.capSub {
+  white-space: nowrap;
+}
+
+.proofText {
+  white-space: nowrap;
+}
+
 .capBlock {
   margin-bottom: var(--spacing-80);
 }
@@ -130,6 +138,10 @@
 }
 
 @media (max-width: 900px) {
+  .capSub,
+  .proofText {
+    white-space: normal;
+  }
   .aiGrid {
     grid-template-columns: 1fr;
   }

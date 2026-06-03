@@ -2,6 +2,16 @@
   position: relative;
 }
 
+.heroSub {
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .heroSub {
+    white-space: normal;
+  }
+}
+
 .tlItem {
   display: grid;
   grid-template-columns: 32px 1fr;

@@ -1,3 +1,13 @@
+.heroSub {
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .heroSub {
+    white-space: normal;
+  }
+}
+
 .workList {
   display: flex;
   flex-direction: column;

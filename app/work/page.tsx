@@ -56,7 +56,7 @@ export default function WorkPage() {
       <Reveal className="section-head">
         <span className="eyebrow">Work</span>
         <h1 style={{ fontSize: 'var(--text-heading-lg)' }}>做过的产品</h1>
-        <p className="sub">
+        <p className={`sub ${styles.heroSub}`}>
           13 年里，我从 0 到 1 搭过电商 SaaS、达人营销平台、礼品数智平台、企业 IM
           系统。 每个项目都覆盖从架构设计到全周期管理，其中 DOHOZZ 还用 Vibe Coding
           做出了可在线体验的 Demo。

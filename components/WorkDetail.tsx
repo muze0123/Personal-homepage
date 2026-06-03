@@ -1,7 +1,12 @@
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
 import { Orb } from '@/components/Orb';
 import { Reveal } from '@/components/Reveal';
+import { Lightbox } from '@/components/Lightbox';
 import { getWorkProject, getWorkProjectName } from '@/lib/workData';
+import type { ScreenshotItem } from '@/lib/workData';
 import styles from './WorkDetail.module.css';
 
 interface WorkDetailProps {
@@ -10,6 +15,7 @@ interface WorkDetailProps {
 
 export function WorkDetail({ slug }: WorkDetailProps) {
   const project = getWorkProject(slug);
+  const [lightbox, setLightbox] = useState<ScreenshotItem | null>(null);
 
   if (!project) {
     return (
@@ -72,26 +78,87 @@ export function WorkDetail({ slug }: WorkDetailProps) {
             )}
           </div>
         )}
-      </Reveal>
-
-      {/* Screenshot */}
-      <Reveal className={styles.shot} delay={0.05}>
-        {project.screenshot ? (
-          <img
-            src={project.screenshot}
-            alt={`${project.name} 截图`}
-            className={styles.shotImg}
-          />
-        ) : (
-          <>
-            <Orb variant="sky" size={240} style={{ top: '-50px', right: '-40px', opacity: 0.4 }} />
-            <div className={styles.shotInner}>
-              <div className={styles.shotLabel}>{project.name}</div>
-              <div className={styles.shotHint}>产品截图待补 · 占位中</div>
-            </div>
-          </>
+        {project.demoLinks && project.demoLinks.length > 0 && (
+          <div className={styles.demoLinks}>
+            {project.demoLinks.map((dl) => (
+              <a
+                key={dl.name}
+                href={dl.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.demoLink}
+              >
+                {dl.name} ↗
+              </a>
+            ))}
+          </div>
         )}
       </Reveal>
+
+      {/* Mobile Screenshots */}
+      {project.mobileScreenshots && project.mobileScreenshots.length > 0 && (
+        <Reveal className={styles.shotMobileRow} delay={0.05}>
+          {project.mobileScreenshots.map((item, i) => (
+            <div key={i} className={styles.shotMobileWrap}>
+              <img
+                src={item.src}
+                alt={item.label}
+                className={styles.shotMobile}
+                onClick={() => setLightbox(item)}
+              />
+              <div className={styles.shotCaption}>
+                <span className={styles.shotCaptionLabel}>{item.label}</span>
+                {item.desc && <span className={styles.shotCaptionDesc}>{item.desc}</span>}
+              </div>
+            </div>
+          ))}
+        </Reveal>
+      )}
+
+      {/* Screenshot grid */}
+      {project.screenshots && project.screenshots.length > 0 ? (
+        <Reveal className={styles.shotGrid} delay={0.05}>
+          {project.screenshots.map((item, i) => (
+            <div key={i}>
+              <img
+                src={item.src}
+                alt={item.label}
+                className={styles.shotImg}
+                onClick={() => setLightbox(item)}
+              />
+              <div className={styles.shotCaption}>
+                <span className={styles.shotCaptionLabel}>{item.label}</span>
+                {item.desc && <span className={styles.shotCaptionDesc}>{item.desc}</span>}
+              </div>
+            </div>
+          ))}
+        </Reveal>
+      ) : (
+        <Reveal className={styles.shot} delay={0.05}>
+          {project.screenshot ? (
+            <div>
+              <img
+                src={project.screenshot.src}
+                alt={project.screenshot.label}
+                className={styles.shotImg}
+                onClick={() => setLightbox(project.screenshot!)}
+              />
+              <div className={styles.shotCaption}>
+                <span className={styles.shotCaptionLabel}>{project.screenshot.label}</span>
+                {project.screenshot.desc && <span className={styles.shotCaptionDesc}>{project.screenshot.desc}</span>}
+              </div>
+            </div>
+          ) : (
+            <>
+              <Orb variant="sky" size={240} style={{ top: '-50px', right: '-40px', opacity: 0.4 }} />
+              <div className={styles.shotInner}>
+                <div className={styles.shotLabel}>{project.name}</div>
+                <div className={styles.shotHint}>产品截图待补 · 占位中</div>
+              </div>
+            </>
+          )}
+        </Reveal>
+      )}
 
       {/* Background */}
       <Reveal className={styles.section}>
@@ -104,7 +171,9 @@ export function WorkDetail({ slug }: WorkDetailProps) {
       <Reveal className={styles.section} delay={0.05}>
         <span className="eyebrow">What I Did</span>
         <h2>我做了什么</h2>
-        <p>{project.whatIDid}</p>
+        {Array.isArray(project.whatIDid)
+          ? project.whatIDid.map((text, i) => <p key={i}>{text}</p>)
+          : <p>{project.whatIDid}</p>}
         <div className={styles.modules}>
           {project.modules.map((m) => (
             <span key={m} className="tag">
@@ -174,6 +243,9 @@ export function WorkDetail({ slug }: WorkDetailProps) {
           <h3>联系我 →</h3>
         </Link>
       </Reveal>
+
+      {/* Lightbox */}
+      <Lightbox item={lightbox} onClose={() => setLightbox(null)} />
     </div>
   );
 }

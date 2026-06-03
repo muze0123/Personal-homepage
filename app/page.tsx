@@ -67,9 +67,29 @@ export default function HomePage() {
             <Link href="/work" className="btn btn-primary">
               查看项目案例 →
             </Link>
-            <a href="/AI产品经理／产品经理-张斌.pdf" className="btn btn-ghost" download>
+            <a href="/AI产品经理_产品经理-张斌.pdf" className="btn btn-ghost" download>
               下载简历
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats */}
+      <section className={`section-tight ${styles.statsBand}`}>
+        <div className="content">
+          <div className={styles.statsGrid}>
+            {[
+              { value: '8年', label: '产品经验' },
+              { value: '6段', label: '0→1产品经历' },
+              { value: '8大', label: '产品领域' },
+              { value: '20w+', label: '平台服务用户' },
+              { value: '5类', label: 'AI能力' },
+            ].map((s, i) => (
+              <Reveal key={s.label} className={styles.stat} delay={i * 0.05}>
+                <div className={styles.statValue}>{s.value}</div>
+                <div className={styles.statLabel}>{s.label}</div>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
@@ -190,7 +210,7 @@ export default function HomePage() {
               <Link href="/contact" className="btn btn-primary">
                 联系我 →
               </Link>
-              <a href="/AI产品经理／产品经理-张斌.pdf" className="btn btn-ghost" download>
+              <a href="/AI产品经理_产品经理-张斌.pdf" className="btn btn-ghost" download>
                 下载简历
               </a>
             </div>

@@ -15,7 +15,7 @@ export default function ContactPage() {
         <Orb variant="sky" size={300} style={{ top: '-100px', right: '-80px', opacity: 0.35 }} />
         <span className="eyebrow">Contact</span>
         <h1>正在找下一段旅程</h1>
-        <p>
+        <p className={styles.heroSub}>
           如果你的团队在找懂业务、能落地 AI、还能 Vibe Coding
           做出产品的产品经理，欢迎联系我。
         </p>
@@ -47,17 +47,30 @@ export default function ContactPage() {
       {/* Contact grid */}
       <div className={styles.contactGrid}>
         <Reveal className={`card-plain ${styles.contactBlock}`} delay={0.05}>
-          <span className="eyebrow">邮箱</span>
-          <a href="mailto:zhangbinmuze@outlook.com" className={styles.contactEmail}>
-            zhangbinmuze@outlook.com
-          </a>
+          <span className="eyebrow">联系方式</span>
+          <div className={styles.contactInfo}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2" />
+              <path d="m22 4-10 8L2 4" />
+            </svg>
+            <a href="mailto:zhangbinmuze@outlook.com" className={styles.contactText}>
+              zhangbinmuze@outlook.com
+            </a>
+          </div>
+          <div className={styles.contactInfo}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+              <line x1="12" y1="18" x2="12" y2="18" />
+            </svg>
+            <span className={styles.contactText}>15968109140</span>
+          </div>
           <p className={styles.contactNote}>优先通过邮件联系，我会尽快回复。</p>
         </Reveal>
 
         <Reveal className={`card-plain ${styles.contactBlock}`} delay={0.1}>
           <span className="eyebrow">简历</span>
           <p className={styles.contactNote}>完整工作经历与项目细节。</p>
-          <a href="/AI产品经理／产品经理-张斌.pdf" className="btn btn-primary" download>
+          <a href="/AI产品经理_产品经理-张斌.pdf" className="btn btn-primary" download>
             下载 PDF 简历
           </a>
         </Reveal>

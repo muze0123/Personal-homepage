@@ -32,19 +32,27 @@
 
 .footerLinks {
   display: flex;
-  gap: 20px;
+  gap: 16px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .footerLinks a {
-  font-family: var(--font-mono);
-  font-size: var(--text-body-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
   color: var(--color-off-black);
-  transition: opacity 0.2s ease;
+  border: 1px solid rgba(36, 36, 36, 0.15);
+  border-radius: 50%;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 .footerLinks a:hover {
-  opacity: 0.6;
+  background: rgba(36, 36, 36, 0.06);
+  border-color: rgba(36, 36, 36, 0.3);
+  opacity: 1;
 }
 
 .footerBottom {
@@ -55,10 +63,6 @@
   padding-top: var(--spacing-24);
   font-family: var(--font-mono);
   font-size: var(--text-body-sm);
-  color: var(--color-faint-text);
-}
-
-.footerBuilt {
   color: var(--color-faint-text);
 }
 

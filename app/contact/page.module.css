@@ -20,6 +20,10 @@
   z-index: 1;
 }
 
+.heroSub {
+  white-space: nowrap;
+}
+
 /* Intent */
 .intentCard {
   display: grid;
@@ -70,18 +74,25 @@
   gap: 12px;
 }
 
-.contactEmail {
+.contactInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-faint-text);
+}
+
+.contactText {
   font-family: var(--font-mono);
   font-size: var(--text-subheading);
   color: var(--color-ink);
-  border-bottom: 1px solid;
-  padding-bottom: 2px;
-  align-self: flex-start;
   word-break: break-all;
+  text-decoration: none;
 }
 
-.contactEmail:hover {
+a.contactText:hover {
   opacity: 0.7;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .contactNote {
@@ -109,6 +120,9 @@
 }
 
 @media (max-width: 900px) {
+  .heroSub {
+    white-space: normal;
+  }
   .intentCard {
     grid-template-columns: repeat(2, 1fr);
   }

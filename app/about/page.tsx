@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Orb } from '@/components/Orb';
 import { Reveal } from '@/components/Reveal';
 import styles from './page.module.css';
@@ -21,7 +20,7 @@ const advantages = [
 const skillGroups = [
   {
     group: '产品能力',
-    tags: ['需求调研', 'PRD 撰写', '原型设计', '数据驱动', '商业化规划', '全周期管理'],
+    tags: ['行业洞察', '用户分析', '需求调研', '产品规划', '产品方案设计', '原型设计', 'PRD撰写', '数据驱动', '项目管理&复盘', '跨岗协作', '向上汇报', '商业化规划', '全周期管理'],
   },
   {
     group: 'AI 能力',
@@ -29,11 +28,11 @@ const skillGroups = [
   },
   {
     group: '技术能力',
-    tags: ['Vibe Coding', 'Cursor', 'Claude Code', 'Codex', 'SQL', '接口联调'],
+    tags: ['Vibe Coding', 'Cursor', 'VS', 'Codex', 'Claude Code', '简单SQL', 'API接口联调'],
   },
   {
     group: '设计工具',
-    tags: ['Axure', 'MockingBot', 'Figma', 'Sketch', 'Visio', 'Xmind', 'PS'],
+    tags: ['Axure', 'Figma', 'Stitch', 'Lovart', 'Pencil', 'MockingBot', 'Sketch', 'Visio', 'Xmind', 'PS'],
   },
 ];
 
@@ -54,13 +53,10 @@ export default function AboutPage() {
       <Reveal className={styles.aboutHero}>
         <div className={styles.aboutAvatar}>
           <Orb variant="sky" size={220} style={{ top: '-30px', left: '-30px', opacity: 0.4, zIndex: 0 }} />
-          <Image
+          <img
             src="/avatar.jpg"
             alt="张斌 头像"
-            width={260}
-            height={370}
             className={styles.avatarImg}
-            priority
           />
         </div>
         <div className={styles.aboutIntro}>
@@ -77,7 +73,7 @@ export default function AboutPage() {
             <a href="mailto:zhangbinmuze@outlook.com" className="btn btn-primary">
               发邮件给我 →
             </a>
-            <a href="/AI产品经理／产品经理-张斌.pdf" className="btn btn-ghost" download>
+            <a href="/AI产品经理_产品经理-张斌.pdf" className="btn btn-ghost" download>
               下载简历
             </a>
           </div>

@@ -22,7 +22,7 @@ export function Nav() {
         <div className={styles.navInner}>
           <Link href="/" className={styles.brand}>
             <span className={styles.brandMark}>ZB</span>
-            <span className={styles.brandName}>主页</span>
+            <span className={styles.brandName}>张斌</span>
           </Link>
           <button
             className={styles.navToggle}

@@ -88,7 +88,7 @@ export default function ExperiencePage() {
       <Reveal className="section-head">
         <span className="eyebrow">Experience</span>
         <h1 style={{ fontSize: 'var(--text-heading-lg)' }}>职业历程</h1>
-        <p className="sub">
+        <p className={`sub ${styles.heroSub}`}>
           从顺丰 IT 支持，到运维 TL，再到产品经理与资深产品经理 —— 13
           年里完成了从「支撑岗」到「产品岗」再到「AI 产品」的演进。
         </p>

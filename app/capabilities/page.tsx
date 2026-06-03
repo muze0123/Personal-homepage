@@ -43,16 +43,22 @@ const aiMethods = [
 ];
 
 const tools = [
+  'Vibe Coding',
   'Cursor',
   'Claude Code',
   'Codex',
+  'VS',
+  '简单SQL',
+  'API接口联调',
   'Axure',
   'Figma',
-  'Sketch',
+  'Stitch',
+  'Lovart',
+  'Pencil',
   'MockingBot',
-  'SQL',
-  'Xmind',
+  'Sketch',
   'Visio',
+  'Xmind',
   'PS',
 ];
 
@@ -62,7 +68,7 @@ export default function CapabilitiesPage() {
       <Reveal className="section-head">
         <span className="eyebrow">Capabilities</span>
         <h1 style={{ fontSize: 'var(--text-heading-lg)' }}>不止于写 PRD</h1>
-        <p className="sub">
+        <p className={`sub ${styles.capSub}`}>
           我把两件事做成了差异化：一是产品从 0 到 1 搭建及全周期管理，二是用 Vibe
           Coding 把需求亲手做成可运行的产品。
         </p>
@@ -92,7 +98,7 @@ export default function CapabilitiesPage() {
           <Orb variant="sky" size={180} style={{ top: '-40px', right: '-30px', opacity: 0.4 }} />
           <div className={styles.capProofInner}>
             <span className="eyebrow">实证</span>
-            <p>
+            <p className={styles.proofText}>
               在 DOHOZZ
               项目中，我基于 Cursor / Claude Code
               搭出覆盖达人库、批量建联、寄样、履约、绩效、看板的可演示 Web Demo，

@@ -20,7 +20,7 @@
 .head h1 {
   font-size: var(--text-heading-lg);
   margin-bottom: var(--spacing-16);
-  max-width: 20ch;
+  white-space: nowrap;
 }
 
 .meta {
@@ -50,9 +50,71 @@
   flex-wrap: wrap;
 }
 
+.demoLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: var(--spacing-16);
+}
+
+.demoLink {
+  display: inline-flex;
+  align-items: center;
+  height: 50px;
+  font-family: var(--font-mono);
+  font-size: var(--text-body-sm);
+  color: var(--color-ink);
+  padding: 0 12px;
+  border: 1px solid rgba(36, 36, 36, 0.2);
+  border-radius: 100px;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+}
+
+.demoLink:hover {
+  background: var(--color-ink);
+  color: var(--color-paper-canvas);
+  border-color: var(--color-ink);
+}
+
+/* Mobile Screenshots */
+.shotMobileRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--element-gap);
+  margin: var(--spacing-40) 0 var(--spacing-72);
+}
+
+.shotMobileWrap {
+  width: 375px;
+  max-width: 100%;
+}
+
+.shotMobile {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-cards);
+  border: 1px solid rgba(36, 36, 36, 0.12);
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.shotMobile:hover {
+  opacity: 0.85;
+}
+
 /* Screenshot */
 .shot {
   position: relative;
+  margin: var(--spacing-40) 0 var(--spacing-72);
+}
+
+.shotGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--element-gap);
   margin: var(--spacing-40) 0 var(--spacing-72);
 }
 
@@ -61,6 +123,34 @@
   display: block;
   border-radius: var(--radius-cards);
   border: 1px solid rgba(36, 36, 36, 0.12);
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.shotImg:hover {
+  opacity: 0.85;
+}
+
+/* Screenshot captions */
+.shotCaption {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.shotCaptionLabel {
+  font-family: var(--font-mono);
+  font-size: var(--text-body-sm);
+  color: var(--color-ink);
+  font-weight: 500;
+}
+
+.shotCaptionDesc {
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  color: var(--color-faint-text);
 }
 
 .shotInner {
@@ -192,6 +282,13 @@
 @media (max-width: 768px) {
   .head h1 {
     font-size: var(--text-heading);
+    white-space: normal;
+  }
+  .shotGrid {
+    grid-template-columns: 1fr;
+  }
+  .shotMobileWrap {
+    width: 100%;
   }
   .next {
     grid-template-columns: 1fr;

@@ -8,12 +8,14 @@
 .aboutAvatar {
   position: relative;
   width: 200px;
-  height: 285px;
 }
 
 .avatarImg {
   position: relative;
   z-index: 1;
+  width: 100%;
+  height: auto;
+  display: block;
   border-radius: var(--radius-cards);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }

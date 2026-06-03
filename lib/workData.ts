@@ -4,6 +4,12 @@ export interface WorkDetailSection {
   items?: string[];
 }
 
+export interface ScreenshotItem {
+  src: string;
+  label: string;
+  desc?: string;
+}
+
 export interface WorkProject {
   slug: string;
   name: string;
@@ -12,11 +18,14 @@ export interface WorkProject {
   industry: string;
   tags: string[];
   flagship?: boolean;
-  screenshot?: string;
+  screenshot?: ScreenshotItem;
+  screenshots?: ScreenshotItem[];
+  mobileScreenshots?: ScreenshotItem[];
+  demoLinks?: { name: string; url: string }[];
   demoUrl?: string;
   githubUrl?: string;
   background: string;
-  whatIDid: string;
+  whatIDid: string | string[];
   modules: string[];
   detailSections?: WorkDetailSection[];
   aiCapability?: {
@@ -40,13 +49,15 @@ export const workProjects: Record<string, WorkProject> = {
     industry: '跨境电商 · 达人营销 SaaS',
     tags: ['SaaS', '跨境电商', 'AI Agent', 'Vibe Coding', '0→1'],
     flagship: true,
-    screenshot: '/shot-dohozz-overview.png',
-    demoUrl: 'https://dohozz.vercel.app',
-    githubUrl: 'https://github.com/muze0123/DOHOZZ',
+    screenshot: { src: '/找达人-达人库.png', label: '达人库', desc: '达人搜索、筛选与多维数据管理' },
+    demoLinks: [{ name: 'DOHOZZ 达人智能运营平台', url: 'https://dohozz.vercel.app' }],
     background:
       '公司跨境电商业务面临找达人效率低、合作流程混乱、营销效果无追踪、多部门表格管理易出错等痛点，主导开发一站式 SaaS 平台，打造业界标准的达人营销智能决策系统。',
-    whatIDid:
-      '重新定义达人全生命周期管理逻辑（找达人 → 建联 → 寄样 → 转化 → 复盘），覆盖 TikTok、Shopee、Lazada 等多平台数据接口，实现业务全链路线上化。',
+    whatIDid: [
+      '架构设计：重新定义达人全生命周期管理逻辑（找达人-建联-寄样-转化-复盘），覆盖 TikTok、Shopee、Lazada 等多平台数据接口，实现业务全链路线上化。',
+      '模块设计：主导达人库、批量建联、寄样管理、履约追踪、合作单、绩效归属、数据看板等核心模块从 0 到 1 设计落地，并搭建基于 RBAC 的多角色权限体系，保障多团队数据隔离与协作安全。',
+      '业务架构：基于统一达人库底座，针对达人带货与内容种草两大业务场景设计差异化用户旅程，满足同源数据下的不同业务管理需求；同时深度拆解店铺经营数据与 BD 绩效归属逻辑，为运营决策提供量化支撑。',
+    ],
     modules: ['达人库', '批量建联', '寄样管理', '履约追踪', '合作单', '绩效归属', '数据看板'],
     detailSections: [
       {
@@ -108,6 +119,10 @@ export const workProjects: Record<string, WorkProject> = {
     period: '2023.10 – 2025.07',
     industry: '直播电商 · 达人营销 SaaS',
     tags: ['SaaS', '直播电商', 'AIGC', '多平台', '0→1'],
+    screenshot: { src: '/seekark-数据概览.png', label: '数据概览', desc: '达人营销业务数据看板与核心指标监控' },
+    demoLinks: [
+      { name: 'Seekark 时浪', url: 'https://seekark.vercel.app' },
+    ],
     background:
       '品牌商家在多平台达人营销中面临达人筛选低效、合作流程分散、内容生产成本高、广告投放缺乏数据支撑等核心痛点，主导从 0 到 1 构建一站式达人营销智能运营 SaaS 平台。',
     whatIDid:
@@ -171,6 +186,18 @@ export const workProjects: Record<string, WorkProject> = {
     period: '2021.04 – 2023.08',
     industry: '礼品行业 · 全链路数智化 SaaS',
     tags: ['SaaS', '供应链', 'ERP', 'CRM', 'B2B2C'],
+    screenshots: [
+      { src: '/智慧展厅.png', label: '智慧展厅', desc: '礼品行业数字展厅与商品展示' },
+      { src: '/卡券电商.png', label: '卡券电商', desc: '卡券管理与电商交易系统' },
+    ],
+    demoLinks: [
+      { name: '新百礼腾', url: 'https://new-bailiteng.vercel.app/' },
+      { name: '礼脉脉', url: 'https://li-maimai.vercel.app/' },
+      { name: '飞象云APP', url: 'https://feixiang-cloud-app.vercel.app/' },
+      { name: '企业集采商城', url: 'https://enterprise-centralized-procurement.vercel.app/' },
+      { name: '进销存', url: 'https://purchase-sell-stock-management-syst.vercel.app/' },
+      { name: '采销云', url: 'https://procurement-and-sales-cloud.vercel.app/' },
+    ],
     background:
       '礼品行业企业面临需求侧、流通侧、供给侧数据割裂、供应链管理粗放、营销转化低效等痛点，主导基于头部礼企资源打造全链路数智化 SaaS 平台，帮助企业实现数字资产沉淀与商业价值最大化。',
     whatIDid:
@@ -228,6 +255,17 @@ export const workProjects: Record<string, WorkProject> = {
     period: '2020.01 – 2021.04',
     industry: '企业服务 · IM 协同系统',
     tags: ['IM', '企业协同', '私有云', '0→1', '信息安全'],
+    mobileScreenshots: [
+      { src: '/中航商网_消息列表.png', label: '消息列表', desc: '即时通讯聊天与消息管理' },
+      { src: '/中航商网_工作台.png', label: '工作台', desc: '企业协同办公工作台' },
+    ],
+    screenshots: [
+      { src: '/中航商网_管理后台.png', label: '管理后台', desc: 'IM 系统管理后台与配置中心' },
+    ],
+    demoLinks: [
+      { name: '中航商网移动端', url: 'https://avic-commercial-network-app.vercel.app/' },
+      { name: '中航商网服务端', url: 'https://avic-commercial-network-server.vercel.app/' },
+    ],
     background:
       '基于私有云架构结合网易 SaaS 与 PaaS 服务，主导为中国航空工业集团从 0 到 1 构建专属 IM 协同系统，覆盖办公、电商、员工服务、供应链与智能制造等多业务场景。',
     whatIDid:

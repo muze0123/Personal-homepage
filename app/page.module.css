@@ -208,8 +208,9 @@
   font-size: var(--text-subheading);
   color: var(--color-off-black);
   line-height: 1.6;
-  max-width: 62ch;
-  margin: var(--spacing-16) auto var(--spacing-24);
+  max-width: none;
+  margin: var(--spacing-16) 0 var(--spacing-24);
+  text-align: left;
 }
 
 /* Final CTA */
