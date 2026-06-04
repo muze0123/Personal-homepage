@@ -1,5 +1,6 @@
 .heroSub {
   white-space: nowrap;
+  max-width: none;
 }
 
 @media (max-width: 768px) {
