@@ -64,7 +64,6 @@ export default function ContactPage() {
             </svg>
             <span className={styles.contactText}>15968109140</span>
           </div>
-          <p className={styles.contactNote}>优先通过邮件联系，我会尽快回复。</p>
         </Reveal>
 
         <Reveal className={`card-plain ${styles.contactBlock}`} delay={0.1}>
